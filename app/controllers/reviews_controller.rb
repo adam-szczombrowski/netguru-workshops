@@ -11,6 +11,7 @@ class ReviewsController < ApplicationController
 
     if review.save
       product.reviews << review
+      current_user.reviews << review
       redirect_to category_product_url(product.category, product), notice: 'Review was successfully created.'
     else
       render action: 'new'
