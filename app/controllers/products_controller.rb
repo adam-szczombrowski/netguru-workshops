@@ -16,7 +16,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    if product.user_id != current_user.id
+    if product.user != current_user
       redirect_to category_product_url(category, product)
       flash[:error] = 'You are not allowed to edit this product.'
     end
