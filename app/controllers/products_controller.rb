@@ -6,6 +6,7 @@ class ProductsController < ApplicationController
   expose_decorated(:reviews, ancestor: :product)
 
   def index
+    @category = Category.find(params[:category_id])
   end
 
   def show
@@ -15,7 +16,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    if product.user != current_user
+    if product.user_id != current_user.id
       redirect_to category_product_url(category, product)
       flash[:error] = 'You are not allowed to edit this product.'
     end
@@ -24,7 +25,7 @@ class ProductsController < ApplicationController
   def create
     if current_user
       self.product = Product.new(product_params)
-
+      product.user_id = current_user.id
       if product.save
         category.products << product
         redirect_to category_product_url(category, product), notice: 'Product was successfully created.'
@@ -65,6 +66,6 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:title, :description, :price, :category_id)
+    params.require(:product).permit(:title, :description, :price, :category_id, :user_id)
   end
 end

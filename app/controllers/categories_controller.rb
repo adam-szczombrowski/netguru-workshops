@@ -12,11 +12,15 @@ class CategoriesController < ApplicationController
   end
 
   def new
-    redirect_to new_user_session_path
+    if !current_user.admin?
+      redirect_to new_user_session_path
+    end
   end
 
   def edit
-    redirect_to new_user_session_path
+    if !current_user.admin?
+      redirect_to new_user_session_path
+    end
   end
 
   def create
@@ -28,7 +32,7 @@ class CategoriesController < ApplicationController
         render action: 'new'
       end
     else
-    redirect_to new_user_session_path
+    redirect_to new_user_session_path, notice: 'You are not an admin. Category not created.'
     end
   end
 

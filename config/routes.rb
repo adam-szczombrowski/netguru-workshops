@@ -5,6 +5,9 @@ Rails.application.routes.draw do
     end
   end
 
-  devise_for :users
+  get 'user', to: "users#show"
+
+  devise_for :users, :controllers => {:registrations => "registrations"}
+
   root 'categories#index'
 end

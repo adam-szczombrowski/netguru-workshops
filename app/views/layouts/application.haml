@@ -12,13 +12,13 @@
     %nav.navbar.navbar-default
       .container-fluid
         .navbar-header
-          %span.navbar-brand #{AppConfig.workshops_name}
+          %span.navbar-brand
+            = link_to 'Netguru Workshops 2015', root_url
         %p.navbar-text.navbar-right
           - if current_user
-            = link_to 'Logout', destroy_user_session_path
+            = link_to 'LOGOUT', destroy_user_session_path, method: :delete
           - else
-            = link_to 'Login', new_user_session_path
-            = link_to 'Sign in', new_user_registration_path
+            = link_to 'LOGIN', new_user_session_path
     .container-fluid
       .row
         .col-lg-12

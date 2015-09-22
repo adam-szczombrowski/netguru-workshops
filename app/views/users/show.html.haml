@@ -1,0 +1,19 @@
+.col-md-8
+  .profile
+    %b.name
+      = @user.firstname + ' ' + @user.lastname
+    = @user.email
+    %br
+    %br
+    %table.table
+      %tr
+        %th Product
+        %th Review
+        %th Review date
+
+      - @reviews.each do |review|
+        %tr
+          %td= review.product.title
+          %td= review.content
+          %td= review.updated_at.strftime("%d-%m-%y")
+

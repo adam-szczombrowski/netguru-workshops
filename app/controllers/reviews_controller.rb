@@ -11,7 +11,6 @@ class ReviewsController < ApplicationController
 
     if review.save
       product.reviews << review
-      current_user.reviews << review
       redirect_to category_product_url(product.category, product), notice: 'Review was successfully created.'
     else
       render action: 'new'
@@ -25,6 +24,7 @@ class ReviewsController < ApplicationController
 
   private
     def review_params
-      params.require(:review).permit(:content, :rating)
+      params[:review][:user_id] = current_user.id
+      params.require(:review).permit(:content, :rating, :user_id)
     end
 end

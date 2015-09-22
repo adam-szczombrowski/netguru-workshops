@@ -1,1 +1,145 @@
 @import "bootstrap";
+a {
+  color: white;
+}
+a:hover, a:focus {
+    color: white;
+    text-decoration: none;
+}
+nav {
+  padding: 15px;
+  padding-right: 50px;
+  color: white;
+}
+
+.navbar {
+  background-color: #8C2318;
+  color: white;
+}
+
+.navbar-brand{
+  font-size: 150%;
+  color: white;
+}
+
+.navbar-default .navbar-brand
+{
+  color: white;
+}
+
+.navbar-header{
+  padding-left: 65px;
+}
+
+.col-md-8
+{
+ padding-left: 75px;
+ padding-right: 200px;
+}
+
+.col-md-6
+{
+ padding-left: 75px;
+padding-right: 50px;
+}
+
+.col-md-4
+{
+ padding-left: 75px;
+padding-right: 50px;
+}
+
+.red
+{
+  color: #8C2318;
+}
+
+span a.version:hover {
+  background-color: transparent;
+  text-decoration: none;
+  color: white;
+}
+
+.border-form-div {
+  max-width: 300px;
+  padding: 19px 29px 29px;
+  margin: 0 auto 20px;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+     -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+          box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
+.border-form-div .form-signin-heading,
+.border-form-div .checkbox {
+  margin-bottom: 10px;
+}
+.border-form-div input[type="text"],
+.border-form-div input[type="email"],
+.border-form-div input[type="password"] {
+  font-size: 16px;
+  height: auto;
+  margin-bottom: 15px;
+  padding: 7px 9px;
+}
+
+.form-group {
+  margin: 0px;
+}
+
+.signin-form {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+label.boolean {
+  padding: 10px;
+}
+
+.btn-lg{
+  width: 300px;
+  margin: 2px;
+}
+
+.quest
+{
+  padding: 10px;
+}
+
+.btn {
+  margin: 2px;
+}
+
+.box {
+  border-style: solid;
+  border-width: 1px;
+  margin-bottom: 2px;
+  border-radius: 2px;
+
+}
+
+p{
+  padding-left: 2px;
+}
+
+.link {
+  color: black;
+}
+
+.link:hover, .link:focus {
+    color: black;
+    text-decoration: none;
+}
+
+b.name {
+  font-size: 40px;
+}
+
+.profile {
+  margin-left: auto;
+  margin-right: auto;
+}
